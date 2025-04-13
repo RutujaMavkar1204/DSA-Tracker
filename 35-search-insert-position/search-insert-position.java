@@ -11,14 +11,13 @@ class Solution {
             }
             else if(nums[mid]<target){
                 start=mid+1;
-                    ans=mid+1;
+                  
 
             }
             else{
                 end=mid-1;
 
-                    ans=mid;
             }
-        }return ans;
+        }return start;
     }
 }
