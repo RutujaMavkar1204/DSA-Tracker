@@ -18,12 +18,10 @@ class Solution {
             if(nums[mid]>nums[end]){
                 start=mid+1;
             }
-            else if(nums[mid]<nums[end]){
+            else{
                 end=mid;
             }
-            else{
-                end--;
-            }
+           
     }
     return start;  
     }
