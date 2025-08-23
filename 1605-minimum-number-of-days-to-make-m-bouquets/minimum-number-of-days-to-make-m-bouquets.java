@@ -1,40 +1,44 @@
 class Solution {
     public int minDays(int[] bloomDay, int m, int k) {
-        System.out.println(bloomDay.length);
-        if((long)m*k>bloomDay.length){
+        int start=1;
+        int end=findMax(bloomDay);
+        if(m>bloomDay.length/k){
             return -1;
         }
-        int start=0;
-        int end=findMax(bloomDay);
+       int days= bs(m,bloomDay,start,end, k);
+       return days;
+    }  
+    public int bs(int m, int[] bloomDay, int start, int end, int k){
+        
         while(start<=end){
             int mid=start+(end-start)/2;
-            int blooms=blooms(bloomDay, m, k, mid);
-            if(blooms<m){
-                start=mid+1;
-            }
-            else{
+            int getDays=getDays(mid, bloomDay, k);
+            if(getDays>=m){
                 end=mid-1;
             }
+            else{
+                start=mid+1;
+            }
         }return start;
-        
     }
-    public int blooms(int[] bloomDay, int m, int k,int mid){
+    public int getDays(int mid, int[] bloomDay, int k){
         int count=0;
-        int originalCount=0;
+        int ans=0;
         for(int i=0; i<bloomDay.length; i++){
-            if(bloomDay[i]<=mid ){
+            if(bloomDay[i]<=mid){
                 count++;
                 if(count==k){
+                    ans++;
                     count=0;
-                    originalCount++;
                 }
             }
             else{
                 count=0;
             }
-        }return originalCount;
-        
+
+        }return ans;
     }
+
     public int findMax(int[] bloomDay){
         int max=0;
         for(int bloomDays:bloomDay){
