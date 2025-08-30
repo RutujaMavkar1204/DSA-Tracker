@@ -18,7 +18,6 @@ class Solution {
         while(j<t.length()){
            if(map.containsKey(t.charAt(j))){
                 map.put(t.charAt(j),map.get(t.charAt(j))-1);
-                System.out.println(map);
             }
             else{
                 return false;
@@ -28,7 +27,6 @@ class Solution {
         int k=0;
         while(k<s.length()){
             if(map.get(s.charAt(k))!=0){
-                 System.out.println("map");
                 return false;
             }
             k++;
