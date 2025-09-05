@@ -32,12 +32,9 @@ class Solution {
                 return ans;
             }
             if(sign=='-' && (ans>(Integer.MAX_VALUE/10) ||(ans==Integer.MAX_VALUE/10 && s.charAt(i)-'0'>=8 ) )){
-                System.out.println(ans);
                 return Integer.MIN_VALUE;
             }
             if(sign=='+'&& (ans>(Integer.MAX_VALUE/10) ||(ans==Integer.MAX_VALUE/10 && s.charAt(i)-'0'>=7 ) ) ){
-                System.out.println("'cat'");
-                System.out.println(s.charAt(i)-'0');
                 return Integer.MAX_VALUE;
             }
             else{
