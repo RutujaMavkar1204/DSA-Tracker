@@ -23,9 +23,7 @@ class Solution {
             prev.next=slow.next;
             return head;
         }
-        else{
-            return null;
-        }
+        return prev;
         
         
 
