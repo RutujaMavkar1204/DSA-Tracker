@@ -25,7 +25,6 @@ class Solution {
         count++;
         prev=temp;
         temp=temp.next;
-        System.out.println(prev.val); 
 
       }
       ListNode ans=reverse(newHead);
