@@ -24,9 +24,6 @@ public class Solution {
                     count=1; 
                     temp1=temp1.next;
                     temp2=temp2.next;
-                   
-                    System.out.println(count);
-                    System.out.println(ans.val);
                 }
                 else{
                     count=0;
